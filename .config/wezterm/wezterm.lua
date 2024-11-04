@@ -14,8 +14,8 @@ end)
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("Hack Nerd Font Mono")
-config.color_scheme = "tokyonight_night"
+config.font = wezterm.font("Hack Nerd Font Mono", { weight = "Bold" })
+config.color_scheme = "rose-pine-moon"
 config.font_size = 18
 
 config.window_padding = {
