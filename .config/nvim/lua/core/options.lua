@@ -41,4 +41,7 @@ vim.opt.shortmess:append 'c' -- Don't give |ins-completion-menu| messages (defau
 vim.opt.iskeyword:append '-' -- Hyphenated words recognized by searches (default: does not include '-')
 vim.opt.formatoptions:remove { 'c', 'r', 'o' } -- Don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode. (default: 'croql')
 vim.opt.incsearch = true -- Incremental search
+vim.opt.cmdheight = 0 -- Set cmd height
 vim.o.backspace = 'indent,eol,start' -- Allow backspace on (default: 'indent,eol,start')
+vim.g.nvim_tree_disable_netrw = 0 -- 1 by default, disables netrw
+vim.g.nvim_tree_hijack_netrw = 1 -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
