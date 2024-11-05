@@ -8,6 +8,8 @@ vim.opt.showmode = false -- Don't show the mode, since it's already in the statu
 vim.schedule(function() -- Sync clipboard between OS and Neovim.
   vim.opt.clipboard = 'unnamedplus'
 end)
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.breakindent = true -- Enable break indent
 vim.opt.undofile = true -- Save undo history
 vim.opt.ignorecase = true -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term

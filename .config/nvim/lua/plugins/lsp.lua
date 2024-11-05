@@ -180,6 +180,7 @@ return {
         'cssmodules-language-server',
         'html-lsp',
         'eslint-lsp',
+        'tailwindcss',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -251,5 +252,17 @@ return {
         },
       },
     },
+  },
+
+  {
+    'luckasRanarison/tailwind-tools.nvim',
+    name = 'tailwind-tools',
+    build = ':UpdateRemotePlugins',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-telescope/telescope.nvim',
+      'neovim/nvim-lspconfig',
+    },
+    opts = {}, -- your configuration
   },
 }
