@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   require 'theme',
-  require 'plugins.gitsigns',
+  require 'plugins.git',
   require 'plugins.whichkey',
   require 'plugins.telescope',
   require 'plugins.lsp',
@@ -24,9 +24,6 @@ require('lazy').setup({
   require 'plugins.autocompletion',
   require 'plugins.autoformat',
   require 'plugins.indent_line',
-  require 'plugins.autopairs',
-  require 'plugins.neo-tree',
-  require 'plugins.gitsigns',
   require 'plugins.misc',
   require 'plugins.alpha',
   require 'plugins.lualine',
