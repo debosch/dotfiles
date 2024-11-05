@@ -57,11 +57,17 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
         },
       },
-      -- pickers = {}
       pickers = {
         find_files = {
-          file_ignore_patterns = { 'node_modules', '.git/' },
-          hidden = true,
+          find_command = {
+            'rg',
+            '-uu',
+            '--files',
+            '--smart-case',
+            '--hidden',
+            '--glob',
+            '!**/{node_modules,.next,.git}/*',
+          },
         },
         lsp_references = {
           fname_width = 100,
