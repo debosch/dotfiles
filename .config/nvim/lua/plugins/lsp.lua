@@ -263,6 +263,19 @@ return {
       'nvim-telescope/telescope.nvim',
       'neovim/nvim-lspconfig',
     },
-    opts = {}, -- your configuration
+    opts = {
+      document_color = {
+        enabled = false,
+      },
+      conceal = {
+        enabled = true,
+      },
+      server = {
+        on_attach = function()
+          vim.keymap.set('n', '<leader>tft', '<cmd>:TailwindConcealToggle<cr>')
+          vim.keymap.set('n', '<leader>ts', '<cmd>:TailwindSort<cr>')
+        end,
+      },
+    },
   },
 }

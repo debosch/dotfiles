@@ -33,10 +33,10 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { 'stylua' },
       css = { 'prettierd' },
-      javascript = { 'prettierd' },
-      javascriptreact = { 'prettierd' },
-      typescript = { 'prettierd' },
-      typescriptreact = { 'prettierd' },
+      javascript = { 'eslint' },
+      javascriptreact = { 'eslint' },
+      typescript = { 'eslint' },
+      typescriptreact = { 'eslint' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
