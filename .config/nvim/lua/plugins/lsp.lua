@@ -174,6 +174,10 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'gopls',
+        'gofumpt',
+        'golines',
+        'goimports-reviser',
+        'golangci-lint',
         'prettierd',
         'css-lsp',
         'cssmodules-language-server',

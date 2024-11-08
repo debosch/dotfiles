@@ -46,4 +46,26 @@ return {
       require('Comment').setup()
     end,
   },
+
+  {
+    'olexsmir/gopher.nvim',
+    ft = 'go',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'mfussenegger/nvim-dap',
+    },
+    config = function()
+      require('gopher').setup()
+
+      vim.keymap.set('n', '<leader>gie', '<cmd>GoIfErr<cr>', { desc = 'Add go if error statement' })
+      vim.keymap.set('n', '<leader>gtaj', '<cmd>GoTagAdd json<cr>', { desc = 'Add json tags for struct' })
+      vim.keymap.set('n', '<leader>gtrj', '<cmd>GoTagRm json<cr>', { desc = 'Remove json tags for struct' })
+      vim.keymap.set('n', '<leader>gtay', '<cmd>GoTagAdd yaml<cr>', { desc = 'Add yaml tags for struct' })
+      vim.keymap.set('n', '<leader>gtry', '<cmd>GoTagRm yaml<cr>', { desc = 'Remove yaml tags for struct' })
+    end,
+    build = function()
+      vim.cmd.GoInstallDeps()
+    end,
+  },
 }
