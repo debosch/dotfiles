@@ -8,6 +8,13 @@ return {
     opts = { signs = false },
   },
 
+  {
+    'folke/trouble.nvim',
+    config = function()
+      require('trouble').setup()
+    end,
+  },
+
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
