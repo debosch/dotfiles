@@ -18,12 +18,9 @@ return {
     oil.setup {
       keymaps = {
         ['<C-s>'] = false,
-        ['<C-l>'] = false,
-        ['<C-h>'] = false,
-
         ['q'] = 'actions.close',
-        ['l'] = 'actions.select',
-        ['h'] = 'actions.parent',
+        ['<C-l>'] = 'actions.select',
+        ['<C-h>'] = 'actions.parent',
         ['<C-r>'] = 'actions.refresh',
       },
     }

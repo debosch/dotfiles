@@ -35,7 +35,7 @@ return { -- Autoformat
       css = { 'prettierd' },
       javascript = { 'eslint' },
       javascriptreact = { 'eslint' },
-      typescript = { 'eslint' },
+      typescript = { 'prettierd' },
       typescriptreact = { 'prettierd' },
       go = { 'gofumpt', 'golines', 'goimports-reviser' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
