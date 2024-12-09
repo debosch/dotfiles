@@ -1,10 +1,11 @@
 return {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- Highlight todo, notes, etc in comments
+
   {
     'folke/trouble.nvim',
     config = function()
-      require('trouble').setup()
+      require('trouble').setup {}
     end,
   },
 
@@ -43,7 +44,7 @@ return {
       'mfussenegger/nvim-dap',
     },
     config = function()
-      require('gopher').setup()
+      require('gopher').setup {}
 
       vim.keymap.set('n', '<leader>gie', '<cmd>GoIfErr<cr>', { desc = 'Add go if error statement' })
       vim.keymap.set('n', '<leader>gtaj', '<cmd>GoTagAdd json<cr>', { desc = 'Add json tags for struct' })

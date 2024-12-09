@@ -49,3 +49,9 @@ vim.opt.cmdheight = 0 -- Set cmd height
 vim.o.backspace = 'indent,eol,start' -- Allow backspace on (default: 'indent,eol,start')
 vim.g.nvim_tree_disable_netrw = 0 -- 1 by default, disables netrw
 vim.g.nvim_tree_hijack_netrw = 1 -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
+
+vim.diagnostic.config {
+  float = {
+    border = 'rounded',
+  },
+}
