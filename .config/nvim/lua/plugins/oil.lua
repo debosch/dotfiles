@@ -1,21 +1,19 @@
 return {
   'stevearc/oil.nvim',
-  ---@module 'oil'
-  ---@type oil.SetupOpts
-  opts = {
-    watch_for_changes = true,
-    view_options = {
-      show_hidden = true,
-    },
-  },
   config = function()
     local oil = require 'oil'
 
     vim.keymap.set('n', '<leader>e', function()
-      oil.open()
+      oil.open(nil, { preview = {
+        vertical = true,
+      } })
     end)
 
     oil.setup {
+      watch_for_changes = true,
+      view_options = {
+        show_hidden = true,
+      },
       keymaps = {
         ['<C-s>'] = false,
         ['q'] = 'actions.close',

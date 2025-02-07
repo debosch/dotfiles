@@ -56,7 +56,7 @@ return {
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
@@ -141,6 +141,9 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        sqlls = {
+          filetypes = { 'sql' },
+        },
         gopls = {},
         -- Some languages (like typescript) have entire language plugins that can be useful:
         -- https://github.com/pmizio/typescript-tools.nvim
@@ -183,12 +186,15 @@ return {
         'cssmodules-language-server',
         'html-lsp',
         'eslint-lsp',
-        'tailwindcss',
+        'sqlls',
+        'nginx-language-server',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        automatic_installation = true,
+        ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -253,31 +259,6 @@ return {
           enable = false,
           filetypes = { 'javascriptreact', 'typescriptreact' },
         },
-      },
-    },
-  },
-
-  {
-    'luckasRanarison/tailwind-tools.nvim',
-    name = 'tailwind-tools',
-    build = ':UpdateRemotePlugins',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-telescope/telescope.nvim',
-      'neovim/nvim-lspconfig',
-    },
-    opts = {
-      document_color = {
-        enabled = false,
-      },
-      conceal = {
-        enabled = true,
-      },
-      server = {
-        on_attach = function()
-          vim.keymap.set('n', '<leader>tft', '<cmd>:TailwindConcealToggle<cr>')
-          vim.keymap.set('n', '<leader>ts', '<cmd>:TailwindSort<cr>')
-        end,
       },
     },
   },

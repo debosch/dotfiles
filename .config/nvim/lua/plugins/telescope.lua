@@ -65,7 +65,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
       },
       live_grep = {
-        file_ignore_patterns = { 'node_modules', '.git/' },
+        glob_pattern = '!**/{node_modules,.next,.git,package-lock.json}/*',
+        file_ignore_patterns = { 'node_modules/', '.git/' },
         additional_args = function(_)
           return { '--hidden' }
         end,

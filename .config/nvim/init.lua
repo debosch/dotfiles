@@ -28,6 +28,7 @@ require('lazy').setup({
   require 'plugins.lualine',
   require 'plugins.noice',
   require 'plugins.oil',
+  require 'plugins.treesitter',
   -- require 'plugins.lint',
   -- require 'plugins.debug',
 }, {
