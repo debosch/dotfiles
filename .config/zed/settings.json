@@ -26,6 +26,21 @@
     // Disable ligatures:
     "calt": true
   },
+  "bottom_dock_layout": "full",
+  "vertical_scroll_margin": 10,
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
+  "use_smartcase_search": true,
+  "unnecessary_code_fade": 0.5,
+  "completions": {
+    "words": "disabled",
+    "lsp_fetch_timeout_ms": 400
+  },
+  "assistant": {
+    "version": "2",
+    "enabled": false
+  },
   "languages": {
     "JavaScript": {
       "formatter": {

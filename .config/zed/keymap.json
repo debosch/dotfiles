@@ -1,0 +1,42 @@
+[
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "n": ["workspace::SendKeystrokes", "n z z z"],
+      "N": ["workspace::SendKeystrokes", " z z z"],
+      "x": ["workspace::SendKeystrokes", "\" _ x"]
+    }
+  },
+  {
+    "context": "vim_mode == insert && !menu",
+    "bindings": {
+      "ctrl-d": "editor::ShowCompletions"
+    }
+  },
+  {
+    "context": "vim_mode == visual && !menu",
+    "bindings": {
+      "<": ["workspace::SendKeystrokes", "< g v"],
+      ">": ["workspace::SendKeystrokes", "> g v"],
+      "J": "editor::MoveLineDown",
+      "K": "editor::MoveLineUp",
+      "p": ["workspace::SendKeystrokes", "\" _ d P"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"]
+    }
+  }
+]
