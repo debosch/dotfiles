@@ -56,7 +56,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             '--smart-case',
             '--hidden',
             '--glob',
-            '!**/{node_modules,.next,.git}/*',
+            '!**/{node_modules,.next,.git,dist}/*',
           },
         },
         lsp_references = {

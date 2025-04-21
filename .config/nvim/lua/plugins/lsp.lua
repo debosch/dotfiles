@@ -181,20 +181,19 @@ return {
         'golines',
         'goimports-reviser',
         'golangci-lint',
-        'prettierd',
-        'css-lsp',
-        'cssmodules-language-server',
-        'html-lsp',
-        'eslint-lsp',
+        -- 'prettierd',
+        'cssls',
+        'cssmodules_ls',
+        'html',
+        'eslint',
         'sqlls',
-        'nginx-language-server',
+        'nginx_language_server',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
         automatic_installation = true,
-        ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
