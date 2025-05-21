@@ -14,6 +14,7 @@
   "theme": "Rosé Pine Moon",
   "vim_mode": true,
   "relative_line_numbers": true,
+  "tab_size": 2,
   "telemetry": {
     "diagnostics": false,
     "metrics": false

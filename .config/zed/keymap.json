@@ -1,5 +1,12 @@
 [
   {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-y": null,
+      "cmd-s": "workspace::SaveAll"
+    }
+  },
+  {
     "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
       "w": "vim::NextSubwordStart",
@@ -13,13 +20,25 @@
     "bindings": {
       "n": ["workspace::SendKeystrokes", "n z z z"],
       "N": ["workspace::SendKeystrokes", " z z z"],
-      "x": ["workspace::SendKeystrokes", "\" _ x"]
+      "x": ["workspace::SendKeystrokes", "\" _ x"],
+      "space f f": "file_finder::Toggle",
+      "space f a": "pane::DeploySearch",
+      "space g r": "editor::FindAllReferences",
+      "space g d": "editor::GoToDefinition",
+      "space g D": "editor::GoToDeclaration",
+      "space g i": "editor::GoToImplementation"
     }
   },
   {
     "context": "vim_mode == insert && !menu",
     "bindings": {
       "ctrl-d": "editor::ShowCompletions"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-y": "menu::Confirm"
     }
   },
   {
