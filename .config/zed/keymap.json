@@ -2,7 +2,7 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-y": null,
+      "ctrl-y": "menu::Confirm",
       "cmd-s": "workspace::SaveAll"
     }
   },
@@ -16,6 +16,19 @@
     }
   },
   {
+    "context": "ProjectPanel",
+    "bindings": {
+      "a": "project_panel::NewFile"
+    }
+  },
+  {
+    "context": "ProjectPanel && !VimControl && not_editing",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+      "space f a": "project_panel::NewSearchInDirectory"
+    }
+  },
+  {
     "context": "vim_mode == normal && !menu",
     "bindings": {
       "n": ["workspace::SendKeystrokes", "n z z z"],
@@ -26,19 +39,14 @@
       "space g r": "editor::FindAllReferences",
       "space g d": "editor::GoToDefinition",
       "space g D": "editor::GoToDeclaration",
-      "space g i": "editor::GoToImplementation"
+      "space g i": "editor::GoToImplementation",
+      "space e": "project_panel::ToggleFocus"
     }
   },
   {
     "context": "vim_mode == insert && !menu",
     "bindings": {
       "ctrl-d": "editor::ShowCompletions"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-y": "menu::Confirm"
     }
   },
   {
