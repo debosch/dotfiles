@@ -16,7 +16,7 @@
     }
   },
   {
-    "context": "ProjectPanel",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
       "a": "project_panel::NewFile"
     }
@@ -40,7 +40,8 @@
       "space g d": "editor::GoToDefinition",
       "space g D": "editor::GoToDeclaration",
       "space g i": "editor::GoToImplementation",
-      "space e": "project_panel::ToggleFocus"
+      "space e": "project_panel::ToggleFocus",
+      "space r a": "editor::Rename"
     }
   },
   {
