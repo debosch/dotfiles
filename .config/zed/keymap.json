@@ -41,7 +41,9 @@
       "space g D": "editor::GoToDeclaration",
       "space g i": "editor::GoToImplementation",
       "space e": "project_panel::ToggleFocus",
-      "space r a": "editor::Rename"
+      "space r a": "editor::Rename",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem"
     }
   },
   {
