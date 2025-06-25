@@ -182,12 +182,15 @@ return {
         'goimports-reviser',
         'golangci-lint',
         -- 'prettierd',
+        'css_variables',
         'cssls',
         'cssmodules_ls',
         'html',
         'eslint',
         'sqlls',
         'nginx_language_server',
+        'docker_compose_language_service',
+        'dockerls',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }

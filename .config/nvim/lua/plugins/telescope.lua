@@ -32,23 +32,29 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Telescope picker. This is really useful to discover what Telescope can
     -- do as well as how to actually do it!
 
+    local actions = require 'telescope.actions'
+
     -- [[ Configure Telescope ]]
-    -- See `:help telescope` and `:help telescope.setup()`
+    -- See `:help telescope` and `:help telescope.setup()
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
       defaults = {
+        layout_config = {},
         mappings = {
           i = {
             ['<C-k>'] = require('telescope.actions').move_selection_previous, -- move to prev result
             ['<C-j>'] = require('telescope.actions').move_selection_next, -- move to next result
             ['<C-l>'] = require('telescope.actions').select_default, -- open file
+            ['<C-u>'] = false,
+            ['<esc>'] = actions.close,
           },
         },
       },
       pickers = {
         find_files = {
+          previewer = false,
           find_command = {
             'rg',
             '-uu',
