@@ -15,8 +15,9 @@ end)
 local config = wezterm.config_builder()
 
 config.font = wezterm.font("Hack Nerd Font Mono", { weight = "Bold" })
-config.color_scheme = "rose-pine-moon"
+config.color_scheme = "rose-pine"
 config.font_size = 21
+config.automatically_reload_config = true
 
 config.window_padding = {
 	left = 0,
