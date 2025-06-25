@@ -18,6 +18,13 @@ config.font = wezterm.font("Hack Nerd Font Mono", { weight = "Bold" })
 config.color_scheme = "rose-pine"
 config.font_size = 21
 config.automatically_reload_config = true
+config.keys = {
+	{
+		key = "w",
+		mods = "SUPER",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
 
 config.window_padding = {
 	left = 0,
