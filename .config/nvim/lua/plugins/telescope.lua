@@ -53,6 +53,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
       },
       pickers = {
+        buffers = {
+          previewer = false,
+        },
         find_files = {
           previewer = false,
           find_command = {

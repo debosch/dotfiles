@@ -29,6 +29,7 @@ require('lazy').setup({
   require 'plugins.noice',
   require 'plugins.oil',
   require 'plugins.treesitter',
+  require 'plugins.flash',
   -- require 'plugins.lint',
   -- require 'plugins.debug',
 }, {
