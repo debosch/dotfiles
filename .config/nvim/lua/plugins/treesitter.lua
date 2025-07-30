@@ -51,4 +51,12 @@ return {
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
   'charlespascoe/vim-go-syntax',
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup {
+        enable_close_on_slash = true,
+      }
+    end,
+  },
 }

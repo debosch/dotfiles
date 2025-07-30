@@ -1,5 +1,6 @@
 -- Prevent LSP from overwriting treesitter color settings
-vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
+vim.hl.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
+vim.g.editorconfig = true
 vim.g.have_nerd_font = true -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.opt.number = true -- Make line numbers default
 vim.opt.relativenumber = true
