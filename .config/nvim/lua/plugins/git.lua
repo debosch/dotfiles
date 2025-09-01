@@ -1,8 +1,5 @@
 return {
   {
-    'tpope/vim-fugitive',
-  },
-  {
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -63,25 +60,6 @@ return {
         map('n', '<leader>twd', gitsigns.toggle_word_diff, { desc = '[T]oggle git show [W]ord [D]iff' })
         map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
       end,
-    },
-  },
-
-  {
-    'kdheepak/lazygit.nvim',
-    lazy = true,
-    cmd = {
-      'LazyGit',
-      'LazyGitConfig',
-      'LazyGitCurrentFile',
-      'LazyGitFilter',
-      'LazyGitFilterCurrentFile',
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    keys = {
-      { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
 }

@@ -28,7 +28,7 @@ vim.opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below
 vim.opt.termguicolors = true -- Set termguicolors to enable highlight groups (default: false)
 vim.o.whichwrap = 'bs<>[]hl' -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 vim.o.wrap = false -- Display lines as one long line (default: true)
-vim.o.linebreak = true -- Companion to wrap, don't split words (default: false)
+vim.o.linebreak = false -- Companion to wrap, don't split words (default: false)
 vim.o.expandtab = true -- Convert tabs to spaces (default: false)
 vim.o.swapfile = false -- Creates a swapfile (default: true)
 vim.o.smartindent = true -- Make indenting smarter again (default: false)
@@ -50,6 +50,7 @@ vim.opt.cmdheight = 0 -- Set cmd height
 vim.o.backspace = 'indent,eol,start' -- Allow backspace on (default: 'indent,eol,start')
 vim.g.nvim_tree_disable_netrw = 0 -- 1 by default, disables netrw
 vim.g.nvim_tree_hijack_netrw = 1 -- 1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
+vim.o.winborder = 'single'
 
 vim.diagnostic.config {
   float = {

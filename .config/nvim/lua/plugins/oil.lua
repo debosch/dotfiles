@@ -21,7 +21,7 @@ return {
         keymaps = {
           ['<C-s>'] = false,
           ['q'] = 'actions.close',
-          ['<C-l>'] = 'actions.select',
+          ['<C-y>'] = 'actions.select',
           ['<C-h>'] = 'actions.parent',
           ['<C-r>'] = 'actions.refresh',
         },

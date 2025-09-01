@@ -29,7 +29,6 @@ require('lazy').setup({
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.autopairs',
-  require 'plugins.autocompletion',
   require 'plugins.autoformat',
   require 'plugins.indent_line',
   require 'plugins.misc',
@@ -39,7 +38,8 @@ require('lazy').setup({
   require 'plugins.oil',
   require 'plugins.treesitter',
   require 'plugins.flash',
-  -- require 'plugins.lint',
+  require 'plugins.blink',
+  require 'plugins.db',
   -- require 'plugins.debug',
 }, {
   ui = {

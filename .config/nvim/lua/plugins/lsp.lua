@@ -17,6 +17,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
+      'saghen/blink.cmp',
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -129,7 +130,7 @@ return {
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -141,9 +142,18 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        sqlls = {
-          filetypes = { 'sql' },
-        },
+        -- sqls = {
+        --   settings = {
+        --     sqls = {
+        --       connections = {
+        --         {
+        --           driver = 'postgresql',
+        --           dataSourceName = 'postgres://chirpy:chirpy@localhost:5433/chirpy?sslmode=disable',
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
         gopls = {},
         -- Some languages (like typescript) have entire language plugins that can be useful:
         -- https://github.com/pmizio/typescript-tools.nvim
@@ -187,12 +197,11 @@ return {
         'cssmodules_ls',
         'html',
         'eslint_d',
-        'sqlls',
         'nginx_language_server',
         'docker_compose_language_service',
         'dockerls',
-        'typescript-language-server',
-        'emmet-language-server',
+        'sql-formatter',
+        'sqlls',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -202,12 +211,43 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
+
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            server.capabilities = require('blink.cmp').get_lsp_capabilities(server.capabilities)
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+      }
+    end,
+  },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    config = function()
+      require('typescript-tools').setup {
+        settings = {
+          separate_diagnostic_server = true,
+          publish_diagnostic_on = 'insert_leave',
+          expose_as_code_action = {},
+          tsserver_path = nil,
+          tsserver_plugins = {
+            '@styled/typescript-styled-plugin',
+          },
+          tsserver_max_memory = 'auto',
+          tsserver_format_options = {},
+          tsserver_file_preferences = {},
+          tsserver_locale = 'en',
+          complete_function_calls = false,
+          include_completions_with_insert_text = true,
+          code_lens = 'off',
+          disable_member_code_lens = true,
+          jsx_close_tag = {
+            enable = false,
+            filetypes = { 'javascriptreact', 'typescriptreact' },
+          },
         },
       }
     end,

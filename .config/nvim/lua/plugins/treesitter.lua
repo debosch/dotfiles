@@ -32,6 +32,7 @@ return {
         'toml',
         'yaml',
         'sql',
+        'php',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

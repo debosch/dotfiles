@@ -19,6 +19,9 @@ local opts = { noremap = true, silent = true }
 -- save all buffers
 vim.keymap.set('n', '<C-s>', '<cmd> wa <CR>', opts)
 
+-- close all buffers except current one
+vim.keymap.set('n', '<leader>X', '<cmd> %bd|e#|bd# <CR>', opts)
+
 -- save file without auto-formatting
 vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
