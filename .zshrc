@@ -141,5 +141,3 @@ export PATH="/usr/local/mysql/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/walde/.lmstudio/bin"
 # End of LM Studio CLI section
-
-export GOOGLE_API_KEY="AIzaSyBT-fU6YXJ1e8f1A-jEWdw3oBXelG-B854"
