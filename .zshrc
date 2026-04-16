@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias tx="tmuxifier"
 alias ls="eza"
+alias py="python3"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -131,6 +132,8 @@ export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
 # go
 export GOBIN="$HOME/go/bin"
 export PATH="$GOBIN:$PATH"
+# mysql
+export PATH="/usr/local/mysql/bin:$PATH"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -139,3 +142,4 @@ export PATH="$GOBIN:$PATH"
 export PATH="$PATH:/Users/walde/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export GOOGLE_API_KEY="AIzaSyBT-fU6YXJ1e8f1A-jEWdw3oBXelG-B854"

@@ -2,20 +2,15 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    main = 'nvim-treesitter', -- New entrypoint; delegates setup to config module
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
         'bash',
         'diff',
         'html',
-        'lua',
-        'luadoc',
         'markdown',
         'markdown_inline',
-        'query',
-        'vim',
-        'vimdoc',
         'go',
         'gomod',
         'gosum',
@@ -34,6 +29,8 @@ return {
         'sql',
         'php',
       },
+      -- Neovim 0.12 ships its own parsers/queries for core languages like lua/vim/query.
+      -- Avoid installing shadow parsers from nvim-treesitter; version skew breaks highlighting.
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -56,7 +53,9 @@ return {
     'windwp/nvim-ts-autotag',
     config = function()
       require('nvim-ts-autotag').setup {
-        enable_close_on_slash = true,
+        opts = {
+          enable_close_on_slash = true,
+        },
       }
     end,
   },

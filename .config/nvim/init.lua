@@ -1,3 +1,5 @@
+vim.g.startup_cwd = (vim.uv or vim.loop).cwd()
+
 require 'core.options'
 require 'core.keymaps'
 require 'core.autocmds'
@@ -39,7 +41,6 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.flash',
   require 'plugins.blink',
-  require 'plugins.db',
   -- require 'plugins.debug',
 }, {
   ui = {
