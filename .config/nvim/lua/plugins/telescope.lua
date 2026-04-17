@@ -55,10 +55,17 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
 		local buffer_entry_index = {
 			ordinal = function(t)
-				local path = rawget(t, "filename") or rawget(t, "value") or ""
+				local path = t.filename or t.value or ""
 				local filename = vim.fs.basename(path)
 				local stem = vim.fn.fnamemodify(filename, ":r")
 				return string.format("%s %s", stem, filename), true
+			end,
+		}
+
+		local path_entry_index = {
+			ordinal = function(t)
+				local path = rawget(t, 1) or ""
+				return path, true
 			end,
 		}
 
@@ -140,7 +147,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				theme = "dropdown",
 				cwd = startup_cwd,
 				search_dirs = startup_search_dirs,
-				entry_index = nil,
+				entry_index = path_entry_index,
 				path_display = { "smart" },
 				find_command = new_find_files_command(),
 			})
