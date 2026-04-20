@@ -26,9 +26,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local builtin = require("telescope.builtin")
+		local sorters = require("telescope.sorters")
 		local themes = require("telescope.themes")
+		local fzy = require("telescope.algos.fzy")
 		local startup_cwd = vim.g.startup_cwd or vim.fn.getcwd()
 		local startup_search_dirs = { startup_cwd }
+		local fzy_offset = -fzy.get_score_floor()
 
 		local function new_find_files_command()
 			return {
@@ -62,12 +65,55 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			end,
 		}
 
-		local path_entry_index = {
-			ordinal = function(t)
-				local path = rawget(t, 1) or ""
-				return path, true
-			end,
-		}
+		local function score_fzy(prompt, text)
+			if not text or text == "" then
+				return nil
+			end
+			if prompt == "" then
+				return 1
+			end
+			if not fzy.has_match(prompt, text) then
+				return nil
+			end
+			local s = fzy.score(prompt, text)
+			if s == fzy.get_score_min() then
+				return 1
+			end
+			return 1 / (s + fzy_offset)
+		end
+
+		local function filename_then_path_sorter()
+			return sorters.Sorter:new({
+				discard = true,
+				scoring_function = function(_, prompt, _, entry)
+					local path = entry.path or entry.filename or entry.value or entry.ordinal or ""
+					if path == "" then
+						return -1
+					end
+
+					local filename = vim.fs.basename(path)
+					local file_score = score_fzy(prompt, filename)
+					local path_score = score_fzy(prompt, path)
+
+					if not file_score and not path_score then
+						return -1
+					end
+
+					-- Path queries (with separators) should primarily rank by full path.
+					if prompt:find("[/\\]", 1) then
+						return path_score or (file_score * 1.10)
+					end
+
+					if file_score and path_score then
+						return (file_score * 0.80) + (path_score * 0.20)
+					end
+
+					-- Fallbacks: keep entry visible when only one side matches.
+					return file_score or (path_score * 1.05)
+				end,
+				highlighter = sorters.get_fzy_sorter({}).highlighter,
+			})
+		end
 
 		local dropdown_theme = themes.get_dropdown({
 			winblend = 10,
@@ -138,17 +184,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				cwd = startup_cwd,
 				search_dirs = startup_search_dirs,
 				entry_index = filename_first_entry_index,
-				find_command = new_find_files_command(),
-			})
-		end
-
-		local function find_files_by_path()
-			builtin.find_files({
-				theme = "dropdown",
-				cwd = startup_cwd,
-				search_dirs = startup_search_dirs,
-				entry_index = path_entry_index,
-				path_display = { "smart" },
+				sorter = filename_then_path_sorter(),
 				find_command = new_find_files_command(),
 			})
 		end
@@ -165,8 +201,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-		vim.keymap.set("n", "<leader>ff", find_files_by_name, { desc = "[F]ind [F]iles" })
-		vim.keymap.set("n", "<leader>fp", find_files_by_path, { desc = "[F]ind by [P]ath" })
+		vim.keymap.set("n", "<leader>ff", find_files_by_name, { desc = "[F]ind Files" })
 		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
