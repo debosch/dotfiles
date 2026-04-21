@@ -59,7 +59,12 @@ return {
 				},
 			},
 		},
-		notifier = { enabled = true },
+		notifier = {
+			enabled = true,
+			filter = function(notif)
+				return notif.msg ~= "No information available"
+			end,
+		},
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		statuscolumn = { enabled = true },
