@@ -141,3 +141,5 @@ export PATH="/usr/local/mysql/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/walde/.lmstudio/bin"
 # End of LM Studio CLI section
+# Prevent accidental shell exit on Ctrl+D (EOF)
+setopt IGNORE_EOF
