@@ -1,0 +1,9 @@
+theme = Kanagawa Wave
+
+font-family = Hack Nerd Font Mono
+font-style = Bold
+font-size = 22
+
+cursor-style = block
+cursor-style-blink = false
+
