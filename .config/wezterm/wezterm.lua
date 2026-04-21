@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 wezterm.on("gui-startup", function(cmd)
 	local screen = wezterm.gui.screens().main
-	local ratio = 0.7
+	local ratio = 0.5
 	local heightRatio = 0.8
 	local width, height = screen.width * ratio, screen.height * ratio
 	local _, _, window = wezterm.mux.spawn_window(cmd or {
@@ -16,7 +16,7 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font("Hack Nerd Font Mono", { weight = "Bold" })
 config.color_scheme = "rose-pine"
-config.font_size = 21
+config.font_size = 24
 config.automatically_reload_config = true
 config.keys = {
 	{
