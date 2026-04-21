@@ -27,6 +27,7 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'default',
+      ['<CR>'] = { 'accept', 'fallback' },
       ['<C-d>'] = {
         function(cmp)
           cmp.show { providers = { 'lsp', 'buffer' } }

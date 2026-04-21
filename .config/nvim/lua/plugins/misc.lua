@@ -14,6 +14,12 @@ return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
+      require('mini.sessions').setup {
+        autoread = false,
+        autowrite = true,
+        directory = vim.fn.stdpath('data') .. '/sessions',
+      }
+
       --[[ local files = require 'mini.files'
       files.config.options.permanent_delete = false
       files.config.windows.preview = true
