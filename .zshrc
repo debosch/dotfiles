@@ -143,3 +143,10 @@ export PATH="$PATH:/Users/walde/.lmstudio/bin"
 # End of LM Studio CLI section
 # Prevent accidental shell exit on Ctrl+D (EOF)
 setopt IGNORE_EOF
+
+# bun completions
+[ -s "/Users/walde/.oh-my-zsh/completions/_bun" ] && source "/Users/walde/.oh-my-zsh/completions/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
