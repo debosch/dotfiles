@@ -15,6 +15,7 @@ return {
 			vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NONE" })
 			vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
 			vim.api.nvim_set_hl(0, "FoldColumn", { bg = "NONE" })
+			vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#98bb6c" })
 		end,
 	},
 	-- {

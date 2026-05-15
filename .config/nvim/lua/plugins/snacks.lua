@@ -19,6 +19,7 @@ return {
 			replace_netrw = true,
 			trash = true,
 		},
+		image = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		picker = {

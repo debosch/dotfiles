@@ -2,8 +2,8 @@ theme = Kanagawa Wave
 
 font-family = Hack Nerd Font Mono
 font-style = Bold
-font-size = 22
+font-size = 25
 
 cursor-style = block
 cursor-style-blink = false
-
+shell-integration-features = ssh-env,ssh-terminfo,no-cursor

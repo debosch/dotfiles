@@ -1,0 +1,16 @@
+WRN 2026-04-16T15:21:55.586 ?.24409    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/y75M9U/nvim.24409.0
+WRN 2026-04-16T16:24:34.704 ?.28541    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/Er7FQO/nvim.28541.0
+WRN 2026-04-20T13:02:59.776 ?.91373    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/14ML80/nvim.91373.0
+WRN 2026-04-20T13:03:09.529 ?.91424    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/UmdZtL/nvim.91424.0
+WRN 2026-04-20T13:03:13.109 ?.91430    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/aWz9tC/nvim.91430.0
+WRN 2026-04-20T13:25:56.397 ?.93968    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/migQTq/nvim.93968.0
+WRN 2026-04-20T19:31:07.712 ?.30758    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/PAD1FV/nvim.30758.0
+WRN 2026-04-20T19:33:11.758 ?.32421    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/JnSsPV/nvim.32421.0
+WRN 2026-04-20T19:33:53.601 ?.32681    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/5OSJBi/nvim.32681.0
+WRN 2026-04-21T13:18:58.446 ?.6119     server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/d51ycI/nvim.6119.0
+WRN 2026-04-21T15:11:23.565 ?.18759    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/OxR3cV/nvim.18759.0
+WRN 2026-04-21T18:42:34.179 ?.61284    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/UuEjQv/nvim.61284.0
+WRN 2026-04-21T19:18:44.723 ?.41706    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/S40flj/nvim.41706.0
+WRN 2026-04-21T19:33:53.434 ?.71377    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/I7v5D3/nvim.71377.0
+WRN 2026-04-21T19:47:00.231 ?.3204     server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/x9LnoR/nvim.3204.0
+WRN 2026-04-23T13:59:36.429 ?.13612    server_start:197: Failed to start server: operation not permitted: /var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T/nvim.walde/DvzMvu/nvim.13612.0
