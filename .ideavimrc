@@ -1,0 +1,79 @@
+let mapleader = ' '
+
+""" Plugins
+set highlightedyank
+set NERDTree
+
+""" Plugin settings
+let g:highlightedyank_highlight_color = "rgba(255, 120, 160, 155)"
+
+set clipboard^=unnamed,unnamedplus
+set matchpairs+=<:>
+set ideajoin
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+set scrolloff=10
+
+xnoremap p P
+xnoremap < <gv
+xnoremap > >gv
+
+nnoremap <Esc> :nohlsearch<cr>
+nnoremap x "_x
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <leader>e :NERDTreeFocus<cr>
+
+" Splits
+map <leader>sv <Action>(SplitVertically)
+map <leader>sh <Action>(SplitHorizontally)
+map <leader>sx <Action>(Unsplit)
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" GoTo
+map <leader>gc <Action>(GotoClass)
+map <leader>ff <Action>(GotoFile)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fa <Action>(GotoAction)
+map <leader>gy <Action>(GotoTypeDeclaration)
+map <leader>gt <Action>(GotoTest)
+map <leader>gl <Action>(GotoLine)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map gr <Action>(ShowUsages)
+map fu <Action>(FindUsages)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+map <Tab> <Action>(NextTab)
+map <S-Tab> <Action>(PreviousTab)
+
+map <leader>sg <Action>(FindInPath)
+map <leader><leader> <Action>(RecentFiles)
+
+map <leader>ra <Action>(RenameElement)
+
+map <leader>x <Action>(CloseContent)
+map <leader>X <Action>(CloseAllEditors)
+map <leader>ca <Action>(ShowIntentionActions)
+map K <Action>(ShowHoverInfo)
+map <leader>fc <Action>(ReformatCode)
+
+imap <C-y> <Action>(EditorChooseLookupItem)
+xmap J <Action>(MoveLineDown)
+xmap K <Action>(MoveLineUp)
+
+""" Zen mode
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>gb <Action>(Annotate)
+map <leader>fh <Action>(Vcs.ShowTabbedFileHistory)
+
+""" Handlers
+sethandler <C-t> n-v:ide
+sethandler <C-s> n-v:ide
+sethandler <C-j> n-v:ide
