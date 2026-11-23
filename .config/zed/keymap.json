@@ -8,6 +8,8 @@
       "space space": "tab_switcher::Toggle",
       "space e": "project_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
+      "space x": "pane::CloseActiveItem",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
@@ -87,6 +89,15 @@
     "context": "Picker",
     "bindings": {
       "ctrl-y": "menu::Confirm"
+    }
+  },
+  {
+    "context": "ProjectPanel || OutlinePanel || GitPanel || AgentPanel || ((ProjectPanel || OutlinePanel || GitPanel || AgentPanel) > Editor) || Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
     }
   }
 ]
