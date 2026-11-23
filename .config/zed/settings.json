@@ -1,0 +1,134 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "tab_size": 2,
+  "format_on_save": "modifications",
+  "semantic_tokens": "off",
+  "languages": {
+    "JSON": {
+      "format_on_save": "modifications"
+    },
+    "Vue.js": {
+      "format_on_save": "on",
+      "auto_indent": "preserve_indent",
+      "tab_size": 2
+    },
+    "TypeScript": {
+      "tab_size": 2,
+      "language_servers": ["typescript-language-server", "!vtsls"],
+    },
+    "TSX": {
+      "language_servers": ["typescript-language-server", "!vtsls"],
+    }
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
+  "ui_font_family": "Hack Nerd Font Mono",
+  "agent_ui_font_size": 20.0,
+  "agent_buffer_font_family": "Hack Nerd Font Mono",
+  "agent_buffer_font_size": 20.0,
+  "show_edit_predictions": false,
+  "cursor_blink": false,
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "vim_mode": true,
+  "agent_ui_font_family": "Hack Nerd Font",
+  "buffer_font_family": "Hack Nerd Font Mono",
+  "buffer_line_height": {
+    "custom": 1.350000023841858
+  },
+  "buffer_font_weight": 400.0,
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "sandbox_permissions": {
+      "write_paths": [
+        {
+          "requested": "/Users/walde/.npm",
+          "resolved": "/Users/walde/.npm"
+        },
+        {
+          "requested": "/var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T",
+          "resolved": "/private/var/folders/ld/7hzqj9x919nd66nww9qcq8mw0000gn/T"
+        },
+        {
+          "requested": "/Users/walde/Library/Caches/go-build",
+          "resolved": "/Users/walde/Library/Caches/go-build"
+        }
+      ],
+      "network_hosts": [
+        "registry.npmjs.org",
+        "zed.dev",
+        "raw.githubusercontent.com",
+        "unpkg.com",
+        "hiddify.com",
+        "github.com",
+        "sing-box.sagernet.org",
+        "v2.hysteria.network"
+      ]
+    },
+    "tool_permissions": {
+      "tools": {
+        "delete_path": {
+          "default": "allow"
+        },
+        "fetch": {
+          "default": "allow"
+        },
+        "create_directory": {
+          "default": "allow"
+        },
+        "move_path": {
+          "default": "allow"
+        },
+        "copy_path": {
+          "default": "allow",
+        },
+        "terminal": {
+          "default": "allow",
+        }
+      }
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.2-astra",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "commit_editor": "expanded",
+    "dock": "left"
+  },
+  "ui_font_size": 23.0,
+  "buffer_font_size": 20.0,
+  "git_commit_buffer_font_size": 20.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Ayu Mirage"
+  }
+}
